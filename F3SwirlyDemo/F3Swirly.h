@@ -54,6 +54,7 @@
 @property (readwrite, nonatomic) CGFloat  thickness;  // Thickness of swirly
 @property (readwrite, nonatomic) int      segments;   // Number of segments within swirly
 @property (readwrite, nonatomic) BOOL     roundedSegments;  // Flag indicating if segments have rounded ends
+@property (readwrite, nonatomic) CGFloat  arcShadowWidth;
 
 // Public methods
 - (void) addThreshold:(double)  a_flValue

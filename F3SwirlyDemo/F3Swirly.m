@@ -192,6 +192,7 @@
 @synthesize thickness       = m_flThickness;
 @synthesize segments        = m_iSegments;
 @synthesize roundedSegments = m_fRoundedSegments;
+@synthesize arcShadowWidth  = m_flArcShadowWidth;
 
 
 #pragma mark - View lifecyle
@@ -383,6 +384,7 @@
   m_iCurrentRpm       = 0;
   m_fRoundedSegments  = YES;
   m_aThresholds       = [[NSMutableArray alloc] init];
+  m_flArcShadowWidth  = 8.0f;
   
   // Set up label attributes
   [self setTextAlignment:UITextAlignmentCenter];
@@ -494,7 +496,7 @@
                         (m_fRoundedSegments) ? kCGLineCapRound : kCGLineCapButt);
     CGContextSetShadowWithColor(a_ctx, 
                                 CGSizeMake(0, 0), 
-                                8.0,
+                                m_flArcShadowWidth,
                                 [UIColor blackColor].CGColor);
     CGContextBeginPath(a_ctx);
     
